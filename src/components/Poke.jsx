@@ -1,4 +1,5 @@
-import React from 'react';
+import axios from 'axios';
+
 
 const PokeResponse = (props) => {
     const onSubmit = (e) => {
@@ -11,12 +12,12 @@ const PokeResponse = (props) => {
     }
 
     const fetchData = () =>{
-        fetch('https://pokeapi.co/api/v2/pokemon?limit=807')
-            .then(response => {return response.json();
-            }).then(response => { props.setNames([response.results]) })
+        axios.get('https://pokeapi.co/api/v2/pokemon?limit=807')
+        .then(response => { props.setNames([response.data.results]) })
     }
 
     const result = props.names[0];
+    console.log(result);
 
     return (
         <div className="container">

@@ -4,11 +4,10 @@ import PokeResponse from './components/Poke';
 
 function App() {
   const [names, setNames] = useState([]);
-  const [ isSubmitted , setIsSubmitted] = useState(false);  
-
+  
   return (
     <div className="App">
-      <PokeResponse names={names} setNames={setNames} isSubmitted = {isSubmitted} setIsSubmitted = {setIsSubmitted} />
+      <PokeResponse names={names} setNames={setNames} />
     </div>
   );
 }
