@@ -1,23 +1,14 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import PokeResponse from './components/Poke';
 
 function App() {
+  const [names, setNames] = useState([]);
+  const [ isSubmitted , setIsSubmitted] = useState(false);  
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <PokeResponse names={names} setNames={setNames} isSubmitted = {isSubmitted} setIsSubmitted = {setIsSubmitted} />
     </div>
   );
 }
